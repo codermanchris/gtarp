@@ -6,3 +6,5 @@ Dependencies:<br />
   lux_vehcontrol<br />
   fivem resources<br />
   fx server<br />
+
+NOTE: Expect nothing to work right now.
