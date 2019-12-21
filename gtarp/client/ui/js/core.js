@@ -74,57 +74,58 @@ var core = {
          // ask the server for account info 
          core.sendPost("RequestAccountInfo", {});
 
-         // keep doing this until we get our shit
+         // keep doing this until we get our account information
          setTimeout(function() {
               core.requestAccountInfo();
          }, 5000);
     },
 
-    // receive incoming messages from client 
-    receiveMessage: function(data) {
-         // see if this is a core method first
-         if (data.screen === undefined || data.screen === null || data.screen.length == 0) {
-              var coreMethod = core[data.method];
-              if (coreMethod !== undefined) {
-                   console.log("calling core method for " + data.method);
-                   coreMethod(data);
-              }
-              return;
-         }
-         
-         // this must be a screen method then
-         var screen = core.getScreen(data.screen);
-         if (screen !== undefined) {
-              core.screen = screen;
+     // receive incoming messages from client 
+     receiveMessage: function(data) {
+          // see if this is a core method first
+          if (data.screen === undefined || data.screen === null || data.screen.length == 0) {
+               var coreMethod = core[data.method];
+               if (coreMethod !== undefined) {
+                    console.log("calling core method for " + data.method);
+                    coreMethod(data);
+               }
+               return;
+          }
+          
+          // this must be a screen method then
+          var screen = core.getScreen(data.screen);
+          if (screen !== undefined) {
+               core.screen = screen;
 
-              var methodHandler = screen[data.method];
-              if (methodHandler !== undefined) {
-                   console.log("calling method handler for " + data.screen + " " + data.method);
-                   methodHandler(data);
-                   return;
-              }
-         }
-    },
+               var methodHandler = screen[data.method];
+               if (methodHandler !== undefined) {
+                    console.log("calling method handler for " + data.screen + " " + data.method);
+                    methodHandler(data);
+                    return;
+               }
+          }
+     },
 
-    // send messages to client
-    sendPost: function(url, parameters) {
-         $.post("http://gtarp/" + url, JSON.stringify(parameters), function(data) {
-              console.log(data);
-         });
-    },
+     // send messages to client
+     sendPost: function(url, parameters) {
+          $.post("http://gtarp/" + url, JSON.stringify(parameters), function(data) {
+               console.log(data);
+          });
+     },
 
-    // CORE EVENTS 
+     // CORE EVENTS 
 
-    // received account information
-    onReceiveAccountData: function(data) {
-         core.permissions = data.permissions;
-         core.characters = data.characters;
-         core.screen = welcome;
+     // received account information
+     onSetAccountData: function(data) {
+          console.log("set account data.");
+          core.permissions = data.permissions;
+          core.characters = data.characters;
+          core.screen = welcome;
 
-         welcome.open();
-    },
+          welcome.open();
+     },
 
-    onSetInventory: function(data) {
-         inventory.set(data.items, data.weapons, data.cash, data.open);
-    }
+     onSetInventory: function(data) {
+          inventory.set(data.items, data.weapons, data.cash, data.open);
+     }
 }

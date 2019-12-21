@@ -1,45 +1,47 @@
 var welcome = {
-    $welcome: null,
-    $accountLoading: null,
-    $characterSlots: [],
-    $characterEdit: null,
-    $characterSelect: null,
-    selectedSlot: -1,
+     $welcome: null,
+     $accountLoading: null,
+     $characterSlots: [],
+     $characterEdit: null,
+     $characterSelect: null,
+     selectedSlot: -1,
 
-    // initialize the welcome screen
-    initialize: function() {
-        // cache jquery selectors
-        this.$accountLoading = $("#accountLoading");
-        this.$welcome = $("#welcome");
-        this.$characterEdit = $("#characterEdit");
-        this.$characterSelect = $("#characterSelect");
+     // initialize the welcome screen
+     initialize: function() {
+          // cache jquery selectors
+          this.$accountLoading = $("#accountLoading");
+          this.$welcome = $("#welcome");
+          this.$characterEdit = $("#characterEdit");
+          this.$characterSelect = $("#characterSelect");
 
-        // loop through available character slots
-        for (var i = 0; i < core.maxCharacters; i++) {
-            var index = i.toString();
-            this.$characterSlots.push($("#characterSlot" + index));
-            this.$characterSlots[i].attr("onclick", "welcome.viewCharacter("+ index + ", true);");
-        }          
-    },
+          // loop through available character slots
+          for (var i = 0; i < core.maxCharacters; i++) {
+               var index = i.toString();
+               this.$characterSlots.push($("#characterSlot" + index));
+               this.$characterSlots[i].attr("onclick", "welcome.viewCharacter("+ index + ", true);");
+          }          
+     },
 
-    // open the welcome screen
-    open: function(data) {
-         for (i = 0; i < core.characters.length; ++i) {
-              var c = core.characters[i];
-              var slot = this.$characterSlots[i];
-              slot.html(c.FirstName + " " + c.LastName);
-              slot.attr("onclick", "welcome.viewCharacter(" + i + ", false);");
-         }
-         this.$accountLoading.hide();
-         this.$welcome.show();
+     // open the welcome screen
+     open: function(data) {    
+          if (core.characters !== undefined) {
+               for (i = 0; i < core.characters.length; ++i) {
+                    var c = core.characters[i];
+                    var slot = this.$characterSlots[i];
+                    slot.html(c.FirstName + " " + c.LastName);
+                    slot.attr("onclick", "welcome.viewCharacter(" + i + ", false);");
+               }
+          }
+          this.$accountLoading.hide();
+          this.$welcome.show();
 
-         welcome.viewCharacter(0, core.characters.length == 0);
-    },
+          welcome.viewCharacter(0, core.characters.length == 0);
+     },
 
-    // close the welcome screen
-    close: function() {
-        this.$welcome.hide();
-    },
+     // close the welcome screen
+     close: function() {
+          this.$welcome.hide();
+     },
 
     // select a character and view it's information
     viewCharacter: function(slot, isOpenSlot) {    

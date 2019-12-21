@@ -19,7 +19,6 @@ function LocalPlayer.Tick()
     LocalPlayer.Ped = PlayerPedId()
     LocalPlayer.Coords = GetEntityCoords(LocalPlayer.Ped, false)    
     LocalPlayer.Heading = GetEntityHeading(LocalPlayer.Ped)
-
 end
 
 function LocalPlayer.HandleAdmin()
@@ -41,7 +40,7 @@ function LocalPlayer.SetAccountData(permissionLevel, cityAccess, characters)
     LocalPlayer.PermissionLevel = permissionLevel
     LocalPlayer.CityAccess = cityAccess
     
-    UI.Message({ screen = nil, 'setAccountData', permissionLevel = permissionLevel, cityAccess = cityAccess, characters = characters })    
+    UI.Message({ screen = nil, method = 'onSetAccountData', permissionLevel = permissionLevel, cityAccess = cityAccess, characters = characters })
     UI.NextStatsCheckAt = GetGameTimer() + 1000
     
     SetNuiFocus(true, true)

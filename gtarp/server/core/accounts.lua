@@ -39,19 +39,17 @@ function Accounts.Load(playerId, steamId)
         SteamId = steamId,
         DiscordId = discordId,
         SteamName = steamName,
+        Characters = {}
     }
 
     -- add to core accounts list for later use
-    Core.AddAccount(playerId, account)
+    local acc = Core.AddAccount(playerId, account)
     
-    -- log to database    
-    Core.WriteLog(account.Id, -1, account.PermissionLevel, 'connect')
-
     -- log in console
     print('> Loaded account (' .. tostring(playerId) .. ' ' .. steamName .. ': ' .. steamId)
 
-    --
-    return account
+    -- note: we want to return the object, not the table. so reget it.
+    return acc
 end
 
 -- Check to see if an accounts exists
@@ -275,14 +273,11 @@ function Accounts.Request(playerId)
 	local account = Accounts.Load(playerId, steamId)
 	if (account == nil) then
 		return
-	end
+    end
 		
 	-- sync player weather with server
 	Weather.SyncPlayer(source)
 
 	-- send account data and character list to player
 	Core.Event(playerId, 'gtarp:SetAccountData', account.PermissionLevel, account.CityAccess, account:GetCharacters())
-
-	-- debug
-	print('debug: received request account data. ' .. tostring(playerId))    
 end

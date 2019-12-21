@@ -22,3 +22,7 @@ setmetatable(Account, {
 function Account:GetCharacter()
 	return self.Characters[self.SelectedCharacterIndex]
 end
+
+function Account:GetCharacters()
+	return self.Characters
+end

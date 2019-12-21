@@ -31,12 +31,8 @@ function Core.GetAccount(playerId)
 end
 
 function Core.AddAccount(playerId, account)
-    local account = Core.GetAccount(playerId)
-    if (account == nil) then
-        return nil
-    end
-
-    Core.Accounts[playerId] = account
+    Core.Accounts[playerId] = Account(playerId, account)
+    return Core.Accounts[playerId]
 end
 
 function Core.RemoveAccount(playerId)
@@ -70,8 +66,12 @@ function Core.WriteSystemLog(message)
 end
 
 function Core.WriteLog(accountId, characterId, permissionLevel, message)
-    print('> WriteLog # aid: ' .. tostring(accountId) .. ': ' .. tostring(characterId) .. ' p: ' .. permissionLevel .. '> ' .. message) 
+    print('> WriteLog # aid: ' .. tostring(accountId) .. ': ' .. tostring(characterId) .. ' p: ' .. tostring(permissionLevel) .. '> ' .. message) 
 
     -- todo
     -- log to db    
+end
+
+function Core.SendMapData(playerId)
+    
 end
