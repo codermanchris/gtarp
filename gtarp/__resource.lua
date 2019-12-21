@@ -1,6 +1,6 @@
 resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 description 'GTARP'
-version '2.0.0'
+version '1.0.0'
 
 server_scripts {
 	'@mysql-async/lib/MySQL.lua',
@@ -20,7 +20,7 @@ server_scripts {
     'server/core/commands.lua',
     'server/core/connection.lua',
     'server/core/core.lua',
-    'server/core/core.events.lua',
+    'server/core/events/core.events.lua',
     'server/core/helpers.lua',
     'server/core/jobs.lua',
     'server/core/events/jobs.events.lua',

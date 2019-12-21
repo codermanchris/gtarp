@@ -1,4 +1,3 @@
-AddEventHandler('onMySqlReady', function()
-    Core.IsBootingUp = true
-    Core.IsAllowingConnections = true
+AddEventHandler('onMySQLReady', function()
+    Core.Initialize()
 end)

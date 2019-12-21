@@ -44,8 +44,8 @@ function Accounts.Load(playerId, steamId)
     -- add to core accounts list for later use
     Core.AddAccount(playerId, account)
     
-    -- log to database
-    --Logs.Write(account.Id, -1, account.PermissionLevel, 'connect')
+    -- log to database    
+    Core.WriteLog(account.Id, -1, account.PermissionLevel, 'connect')
 
     -- log in console
     print('> Loaded account (' .. tostring(playerId) .. ' ' .. steamName .. ': ' .. steamId)
