@@ -1,0 +1,24 @@
+WorldItem = {}Apartment = {}
+Bank = {}
+Business = {}
+Carwash = {}
+ClothingStore = {}
+Dmv = {}
+DriveThrough = {}
+DrugProcessor = {}
+Fbi = {}
+Fishing = {}
+FlightSchool = {}
+Ganglands = {}
+Garage = {}
+Hospital = {}
+House = {}
+MechanicShop = {}
+MoneyTruck = {}
+Prison = {}
+Simeons = {}
+Store = {}
+TattooParlor = {}
+Taxi = {}
+VehicleMarket = {}
+VehicleRental = {}

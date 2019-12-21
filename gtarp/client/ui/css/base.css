@@ -1,0 +1,167 @@
+body {
+    overflow:hidden;
+}
+
+#healthbar {
+    position:absolute;
+    left: -0.58%;
+    top:94.8%;
+    margin: 1.12%;
+    margin-left: 2%;
+    width: 6.9%;
+    height: 0.9%;
+    padding:0px;
+    text-align: center;
+    border-style: solid;
+    border-width: 0.3%;
+    border-color: black;
+    float:left;
+    background-color:#696969;
+}
+
+#armorbar {
+    position:absolute;
+    left: -3.2%;
+    top:94.8%;
+    margin: 1.12%;
+    margin-left: 11.7%;
+    width: 6.9%;
+    height: 0.9%;
+    padding:0px;
+    text-align: center;
+    border-style: solid;
+    border-width: 0.3%;
+    border-color: black;
+    background-color:#696969;			
+}
+
+#healthbox, #armorbox {
+    background: #12a402;
+    width: 100%;
+    height: 100%;
+}
+#armorbox {
+    background: #0076ec;
+}
+
+#volumebar {
+    position:absolute;
+    left: -0.58%;
+    top:96.2%;
+    margin: 1.12%;
+    margin-left: 2%;
+    width: 14%;
+    height: 0.9%;
+    padding:0px;
+    text-align: center;
+    border-style: solid;
+    border-width: 0.3%;
+    border-color: black;
+    float:left;
+    background-color:#696969;
+}
+#volumebox {
+    background: #a2a2a2;
+    width: 100%;
+    height: 100%;
+}
+
+#accountLoading {
+	display: none;
+	background-color: #222;
+	border: 1px solid #000;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	
+ 	position: absolute;
+  	margin: auto;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	width: 200px;
+  	height: 50px;
+  	opacity: 1;
+}
+
+#welcome {
+	display: none;
+	background-color: #222;
+	border: 1px solid #000;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	
+ 	position: absolute;
+  	margin: auto;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	width: 900px;
+  	height: 600px;
+  	opacity: 1;
+}
+
+#welcome .header {
+	background-color: #000;
+	padding: 10px;
+}
+
+#inventory {
+    display: none;
+}
+
+#stash {
+    display: none;
+}
+
+#home {
+    display: none;
+}
+
+#vehicleMarket {
+    display: none;
+}
+
+#vehicleRental {
+    display: none;
+}
+
+#drivethrough {
+    display: none;
+}
+
+#policeHelpDesk {
+    display: none;
+}
+
+#store {
+    display: none;
+}
+
+
+#ganglands {
+    display: none;
+}
+
+#gangshop {
+    display: none;
+}
+
+#jailJob {
+    display: none;
+}
+
+#quantity {
+    display: none;
+}
+
+#quantityDialog {
+    display: none;
+}
+
+#quantityDialog {
+    display: none;
+}
+
+#yesNoDialog {
+    display: none;
+}

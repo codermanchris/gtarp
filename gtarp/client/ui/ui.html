@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+    </head>
+    <body>
+        <!-- Account Loading Display -->
+        <div id="accountLoading">
+            Please wait while your account is loaded.
+        </div>
+
+        <!-- Display HUD Bars -->
+        <div id="hud">
+            <div id="healthbar"><div id="healthbox"></div></div>
+            <div id="armorbar"><div id="armorbox"></div></div>
+            <div id="volumebar"><div id="volumebox"></div></div>
+        </div>        
+
+        <!-- Welcome Screen -->
+        <div id="welcome">
+
+        </div>
+
+        <!-- Inventory -->
+        <div id="inventory">
+
+        </div>
+
+        <!-- Stash -->
+        <div id="stash">
+            
+        </div>
+
+        <!-- Home -->
+        <div id="home">
+
+        </div>
+
+        <!-- Vehicle Market -->
+        <div id="vehicleMarket">
+            <div class="list"></div>
+            <div class="sell"></div>
+            <div class="buy"></div>
+        </div>
+
+        <!-- Vehicle Rental -->
+        <div id="vehicleRental">
+
+        </div>
+
+        <!-- Drivethrough food -->
+        <div id="drivethrough">
+
+        </div>
+
+        <!-- Police Help Desk -->
+        <div id="policeHelpDesk">
+
+        </div>
+
+        <!-- Medical Supplies -->
+        <div id="store">
+            <div class="management"></div>
+            <div class="clerk"></div>
+            <div class="shop"></div>
+        </div>
+
+        <!-- Gang -->
+        <div id="ganglands">
+
+        </div>
+
+        <!-- Gang Shop -->
+        <div id="gangshop">
+            
+        </div>
+
+        <!-- Jail Jobs -->
+        <div id="jailJob">
+            <div class="licensePlate"></div>
+        </div>
+
+        <!-- Dialog Definitions -->
+        <div id='quantity'>
+            <span id='quantityMessage'></span><br />
+            <input type='number' min='1' max='99999999' id='quantityAmount' value='1' maxlength='5' style='width: 100px;' /> / <span id='quantityMaxAmount'></span><br />
+            <input type='button' value='Cancel' onclick='dialogs.quantity.cancel();' /> <input id='quantitySelectButton' type='button' value='Select' onclick='dialogs.quantity.complete();' />
+        </div>
+    
+        <div id='quantityDialog'>
+            <span id='quantityMessage'></span><br />
+            <input type='number' min='1' max='99999999' id='quantityAmount' value='1' maxlength='5' style='width: 50px;' /> / <span id='quantityMax'></span><br />
+            <input type='button' value='Cancel' onclick='cancelQuantity();' /> <input id='quantitySelectButton' type='button' value='Select' onclick='selectQuantity();' />
+        </div>
+    
+        <div id='yesNoDialog'>	
+            <div style='width: 250px; height: 100%; position: relative;'>
+                <div style='background-color: #000; width: 244px; padding: 3px; text-align: center;'>
+                    Delete Character
+                </div>
+                <span id='yesNoMessage' style='margin-top: 5px; font-size: 0.9em;'></span><br />
+                <input type='button' value='Yes' onclick='dialogs.yesNo.yes();' style='position: absolute; bottom: 5px; right: 35px;' />
+                <input type='button' value='No' onclick='dialogs.yesNo.no();' style='position: absolute; bottom: 5px; left: 35px;' />
+            </div>
+        </div>
+
+        <!-- initialize javascript -->
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/globals.js"></script>
+        <script type="text/javascript" src="js/dialogs.js"></script>
+        <script type="text/javascript" src="js/core.js"></script>
+        
+        <!-- ui screens -->
+        <script type="text/javascript" src="js/screens/ammunation.js"></script>
+        <script type="text/javascript" src="js/screens/clerk.js"></script>
+        <script type="text/javascript" src="js/screens/ganglands.js"></script>
+        <script type="text/javascript" src="js/screens/inventory.js"></script>
+        <script type="text/javascript" src="js/screens/phone.js"></script>
+        <script type="text/javascript" src="js/screens/welcome.js"></script>
+
+        <!-- phone apps -->
+        <script type="text/javascript" src="js/screens/apps/app.bank.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.call.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.contacts.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.home.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.insurance.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.internet.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.linux.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.messages.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.moejack.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.moeslist.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.ncic.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.realtor.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.simeons.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.twitter.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.uber.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.vehiclemarket.js"></script>
+        <script type="text/javascript" src="js/screens/apps/app.xracer.js"></script>
+    </body>
+</html>

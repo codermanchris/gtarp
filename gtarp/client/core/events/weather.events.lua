@@ -1,0 +1,16 @@
+RegisterNetEvent('gtarp:WeatherSync')
+AddEventHandler('gtarp:WeatherSync', function(hour, minute, weatherType)
+    Weather.Sync(hour, minute, weatherType)
+	Weather.SetTime(hour, minute)
+	Weather.SetWeather(weatherType)
+end)
+
+RegisterNetEvent('gtarp:WeatherSetTime')
+AddEventHandler('gtarp:WeatherSetTime', function(hour, minute)
+	Weather.SetTime(hour, minute)
+end)
+
+RegisterNetEvent('gtarp:WeatherSet')
+AddEventHandler('gtarp:WeatherSet', function(weatherType)
+	Weather.SetWeather(weatherType)
+end)
