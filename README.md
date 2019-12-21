@@ -1,8 +1,8 @@
 # gtarp
 Custom FiveM roleplay systems written in LUA.
 
-Dependencies:
-  mysql-async
-  lux_vehcontrol
-  fivem resources
-  fx server
+Dependencies:<br />
+  mysql-async<br />
+  lux_vehcontrol<br />
+  fivem resources<br />
+  fx server<br />
