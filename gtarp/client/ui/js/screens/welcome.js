@@ -4,6 +4,9 @@ var welcome = {
      $characterSlots: [],
      $characterEdit: null,
      $characterSelect: null,
+     $tabs: [],
+     activeTabId: 0,
+
      selectedSlot: -1,
 
      // initialize the welcome screen
@@ -19,7 +22,13 @@ var welcome = {
                var index = i.toString();
                this.$characterSlots.push($("#characterSlot" + index));
                this.$characterSlots[i].attr("onclick", "welcome.viewCharacter("+ index + ", true);");
-          }          
+          }
+
+          // get welcome screen tabs
+          for (var i = 0; i < 6; i++) {
+               this.$tabs.push($("#welcome .tab" + i.toString()));
+               this.$tabs[i].hide();
+          }
      },
 
      // open the welcome screen
@@ -43,64 +52,75 @@ var welcome = {
           this.$welcome.hide();
      },
 
-    // select a character and view it's information
-    viewCharacter: function(slot, isOpenSlot) {    
-         for (var i = 0; i < core.maxCharacters; i++) {
-              this.$characterSlots[i].css('background-color', 'gray');
-         }
+     openTab: function(link, tabId) {
+          if (this.activeTabId !== -1) {
+               $("#welcome .menu .activemenu").removeClass("activemenu");
+               this.$tabs[this.activeTabId].hide();
+          }
+          this.$tabs[tabId].show();
+          this.activeTabId = tabId;
+
+          link.classList.add("activemenu");
+     },
+
+     // select a character and view it's information
+     viewCharacter: function(slot, isOpenSlot) {    
+          for (var i = 0; i < core.maxCharacters; i++) {
+               this.$characterSlots[i].css('background-color', 'gray');
+          }
          
-         var characterSlot = this.$characterSlots[slot];
-         characterSlot.css("background-color", "orange");
+          var characterSlot = this.$characterSlots[slot];
+          characterSlot.css("background-color", "orange");
 
-         this.selectedSlot = slot;
+          this.selectedSlot = slot;
 
-         this.$characterEdit.hide();
-         this.$characterSelect.hide();
+          this.$characterEdit.hide();
+          this.$characterSelect.hide();
 
-         if (isOpenSlot) {
-              $('#createFirstName').val('');
-              $('#createLastName').val('');
-              $('#createDateOfBirth').val('');
-              $('#createGender').val('');
-              $('#createSkin').html('');
-              
-              $('#charedit').show();
-         } else {
-              core.character = core.characters[slot];
-              
-              $('#selectedCharName').html(core.character.FirstName + ' ' + core.character.LastName);
-              $('#scCash').html('$' + core.character.Cash.formatMoney());
-              $('#scBank').html('$' + core.character.Bank.formatMoney());
-              $('#scFines').html('$' + core.character.Fines.formatMoney());
-              $('#scCitations').html(core.character.CitationCount);
-              $('#scCitations').html(core.character.ArrestCount);
-              $('#scServedMonths').html(core.character.TotalJailedTime);
-              $('#scNearDeaths').html(core.character.KilledCount);
-              $('#scKnockouts').html(core.character.KnockedOutCount);
-              $('#charselect').show();
-         }    
-    },
+          if (isOpenSlot) {
+               $('#createFirstName').val('');
+               $('#createLastName').val('');
+               $('#createDateOfBirth').val('');
+               $('#createGender').val('');
+               $('#createSkin').html('');
+               
+               $('#charedit').show();
+          } else {
+               core.character = core.characters[slot];
+               
+               $('#selectedCharName').html(core.character.FirstName + ' ' + core.character.LastName);
+               $('#scCash').html('$' + core.character.Cash.formatMoney());
+               $('#scBank').html('$' + core.character.Bank.formatMoney());
+               $('#scFines').html('$' + core.character.Fines.formatMoney());
+               $('#scCitations').html(core.character.CitationCount);
+               $('#scCitations').html(core.character.ArrestCount);
+               $('#scServedMonths').html(core.character.TotalJailedTime);
+               $('#scNearDeaths').html(core.character.KilledCount);
+               $('#scKnockouts').html(core.character.KnockedOutCount);
+               $('#charselect').show();
+          }    
+     },
     
-    // select a character to player
-    selectCharacter: function() {
-        if (core.character === null) 
-            return;
+     // select a character to player
+     selectCharacter: function() {
+          if (core.character === null) 
+               return;
 
-        this.$welcome.hide();
-        
-        var selectedSpawn = $('input[name=spawnGroup]:checked').val();
-        core.sendPost("CharacterSelect", { id: core.character.Id, spawnId: selectedSpawn });               
-    },
+          this.$welcome.hide();
+          
+          var selectedSpawn = $('input[name=spawnGroup]:checked').val();
+          core.sendPost("CharacterSelect", { id: core.character.Id, spawnId: selectedSpawn });               
+     },
 
-    // player wants to request delete
-    requestDelete: function() {
-         if (core.character !== null) {
-              dialogs.yesNo.show("Are you sure you want to delete that character?",
-                   function(value) {                                                
-                        if (value) {
-                             core.sendPost("CharacterRequestDelete", { characterId: core.character.Id });
-                        }
-                   });
-         }
-    }
+     // player wants to request delete
+     requestDelete: function() {
+          if (core.character !== null) {
+               dialogs.yesNo.show("Are you sure you want to delete that character?",
+                    function(value) {                                                
+                         if (value) {
+                              core.sendPost("CharacterRequestDelete", { characterId: core.character.Id });
+                         }
+                    });
+          }
+     }
 }

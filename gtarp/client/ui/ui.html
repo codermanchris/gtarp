@@ -18,7 +18,262 @@
 
         <!-- Welcome Screen -->
         <div id="welcome">
+            <div class="header">
+                <div class='title'>GTA<span style='color:red;'>RP</span> <small>v1.0</small></div>
+                <div class="menu">
+                    <a href="#" class="activemenu" onclick='welcome.openTab(this, 0);'>Welcome</a> <span class="breaker">|</span> <a href="#" onclick='welcome.openTab(this, 1);'>Rules</a> <span class="breaker">|</span> <a href="#" onclick='welcome.openTab(this, 2);'>Characters</a> <span class="breaker">|</span> <a href="#" onclick='welcome.openTab(this, 3);'>Ganglands</a> <span class="breaker">|</span> <a href="#" onclick='welcome.openTab(this, 4);'>Law Enforcement</a> <span class="breaker">|</span> <a href="#" onclick='welcome.openTab(this, 5);'>Medical Services</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="tab0"> <!-- Welcome Message -->
+					<div style='text-align: left;'>
+						<img src='assets/images/dmv.jpg' style='float: left; padding: 10px; margin-top: -12px; width: 115px; height: 95px;'/>
+						<span style='color: fff;'>
+							First things first, if you're a new citizen to the city, you might want to head
+							over to the DMV. It's located near the airport. You'll definitely want to get your driver's
+							license before driving around the city. If the police catch you driving without a
+							license, you could find yourself in quite a bit of trouble. There are bicycle rental
+							facilities all over the city to help you in this quest.
+						</span>
+					</div>
+					<div style='clear: both;'></div>
+					<div style='text-align: left; margin-top: 20px;'>
+						<img src='assets/images/gsec.jpg' style='float: right; padding: 10px; margin-top: -12px; width: 115px; height: 95px;'/>
+						<span style='color: fff;'>After you've received your driver's license, you'll probably want to start earning some cash. You should find a map and visit the points of interest. There are many jobs for you to do.</span>
+					</div>
+					<div style='clear: both;'></div>
+					<div style='text-align: left; margin-top: 20px;'>
+						<img src='assets/images/realtor.jpg' style='float: left; padding: 10px; margin-top: -12px; width: 115px; height: 95px;'/>				
+						<span style='color: fff;'>Next, perhaps you'll want to find a home to live in. Visit a local realtor to find out what's available. There are apartments and houses to choose from located all over the county. You will have to pay taxes on your home, and your home can be used as a spawn point and as a garage.</span>
+					</div>
+                </div>
+                <div class="tab1"> <!-- Rules -->
+                    <div class='box' style='padding: 10px; font-size: 0.8em; overflow:auto; height:540px; width: 98%; color: #fff;'>
+                        <div>
+                            Please read the rules and click the "Agree" button on the bottom of this page.
+                        </div>
+                        <h3>Community Rules:</h3>
+                        <ol type="1" style='list-style-type: decimal; text-align: left;'>
+                            <li>Do not disrespect or attack anyone. If you feel there is an issue, report it on the forums or Discord.</li>
+                            <li>Please respect staff members’ decisions.</li>
+                            <li>Advertising for other communities is not allowed.</li>
+                            <li>Any use of racial, homophobic, sexist, or any other discriminatory language will not be tolerated.</li>
+                            <li>No explicit or pornographic images or content.</li>
+                            <li>Impersonating any members is strictly forbidden.</li>
+                            <li>Do not attempt to attack or gain access to restricted services of Ganglands Roleplay, including all servers and websites.</li>
+                        </ol>
+                        <br/>
+                        <h3>FiveM Server Rules:</h3>
+                        <ol type="1" style='list-style-type: decimal; text-align: left;'>
+                            <li>You are required to have and use a microphone at all times unless an admin permits.</li>
+                            <li>You must register your characters with realistic names and traits.</li>
+                            <li>Never break character. If an issue occurs, attempt to roleplay it out to the best of your abilities.</li>
+                            <li>
+                                Do not metagame.
+                                <ol type="1" style='list-style-type: decimal; text-align: left; margin-left: 15px;'>
+                                    <li>Metagaming is using information that your character wouldn’t know to give yourself an advantage.</li>
+                                    <li>Eg.Checking the player list to see how many cops may be online.</li>
+                                </ol>
+                            </li>
+                            <li>
+                                Do not <i>powergame</i>(2).
+                                <ol type="1" style='list-style-type: decimal; text-align: left; margin-left: 15px;'>
+                                    <li>Do not drive vehicles up mountains that are not equipped to do so.</li>
+                                    <li>
+                                        While incapacitated, roleplay your injury.
+                                        <ol type="1" style='list-style-type: decimal; text-align: left; margin-left: 15px;'>
+                                            <li>If your injuries are not severe, you are permitted to talk and use chat commands while incapacitated. Talk with a weak voice and use /voip whisper.</li>
+                                            <li>For enhanced roleplay, avoid running after an injury and/or use /ws injured.</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>Do not exploit bugs. If you find a bug, report it to a staff member and avoid it if possible.</li>
+                            <li><i>Random deathmatch</i>(3) (RDM) is prohibited.</li>
+                            <li>Active military and government characters are not allowed unless permitted by a staff member. Fort Zancudo, the Aircraft Carrier, and other guarded government facilities are restricted.</li>
+                            <li>Value all life, AI or roleplayers, the same way you would any real person.
+                                <ol type="1" style='list-style-type: decimal; text-align: left; margin-left: 15px;'>
+                                    <li>Killing or downing any individual should never be taken lightly and should always be the last resort.</li>
+                                    <li>You can be jailed for murder when killing locals.</li>
+                                </ol>
+                            </li>
+                            <li>After respawning at the hospital, you must follow the new <i>life rule</i>(5) (NLR).</li>
+                            <li>Do not disconnect, switch characters, or respawn while in an active <i>roleplay scenario</i>(1).
+                                <ol type="1" style='list-style-type: decimal; text-align: left; margin-left: 15px;'>
+                                    <li>If there are police or EMS in the area, you cannot respawn.</li>
+                                    <li>This is a bannable offence.</li>
+                                </ol>
+                            </li>
+                            <li>You are only allowed to have one character per gang.</li>
+                            <li>No cop baiting. Do not knowingly commit crimes in the presence of law enforcement.</li>
+                            <li>You must follow <i>fear RP</i>(4) while being held at weapon point in all <i>Roleplay Scenarios</i>(1).
+                                <ol type="1" style='list-style-type: decimal; text-align: left; margin-left: 15px;'>
+                                    <li>Unless your are certain your life is in imminent danger, you are not to defend yourself or pull out a weapon.</li>
+                                </ol>
+                            </li>
+                            <li>
+                                When crashing your vehicle, roleplay it in a realistic manner.
+                                <ol type="1" style='list-style-type: decimal; text-align: left; margin-left: 15px;'>
+                                    <li>Your character has just suffered injuries. Feel the pain.</li>
+                                    <li>If you rolled your vehicle many times, it’s more than likely broken.</li>
+                                    <li>If your vehicle has intense visual damage, stop driving the vehicle and roleplay that it is broken down.</li>
+                                    <li>If you plow head first into something, your vehicle will be broken and your character will be severely injured.</li>
+                                </ol>
+                            </li>
+                            <li>Do not use your phone or any other methods of in-character communication while in jail.</li>
+                        </ol>
+                        <br/>
+                        <h3>Definitions:</h3>
+                        <ul type="1" style='text-align: left;'>
 
+                            <li><i>(1)Roleplay Scenarios:</i>
+                                <ul type="2" style='text-align: left; margin-left: 15px;'>
+                                    <li>When you have started or joined a new situation involving other people or job actions.</li>
+                                    <li>After you have been away from the roleplay scenario for more than 10 minutes, the situation has ended for you.</li>
+                                    <li>Once a situation has ended and the 10 minute period has elapsed, a new roleplay scenario will be started.</li>
+                                </ul>
+                            </li>
+                            <li><i>(2)Powergaming:</i>
+                                <ul type="2" style='text-align: left; margin-left: 15px;'>
+                                    <li>Powergaming is taking complete control of a situation and allowing others little or no opportunities to advance.</li>
+                                    <li>Exceptions: robberies or hostage situations.</li>
+                                </ul>
+                            </li>
+                            <li><i>(3)Random Deathmatch (RDM):</i>
+                                <ul type="2" style='text-align: left; margin-left: 15px;'>
+                                    <li>Don’t kill people if you don’t have a roleplay reason to do so.</li>
+                                    <li>Unless permitted by a member of the admin staff, do not engage in aggressive violent behaviour unless five minutes have passed since the current <i>roleplay scenario</i>(1) began.</li>
+                                    <li>Do not immediately escalate a situation into deadly violence after the five minutes have elapsed.</li>
+                                </ul>
+                            </li>
+                            <li><i>(4)Fear Roleplay (Fear RP):</i>
+                                <ul type="2" style='text-align: left; margin-left: 15px;'>
+                                    <li>The premise behind Fear RP is that your character is afraid of dying.</li>
+                                    <li>If you have an admin approved character that is not afraid of dying, the above can be negated.</li>
+                                    <li>When someone has a weapon pointed at you, do not reach for your weapon or run away. You will surely be killed.</li>
+                                    <li>If you are in a hostage situation, follow all commands given by the captors. </li>
+                                    <li>Do not use your phone or chat commands to help escape from a Fear RP situation.</li>
+                                </ul>
+                            </li>
+                            <li><i>(5)New Life Rule (NLR):</i>
+                                <ul type="2" style='text-align: left; margin-left: 15px;'>
+                                    <li>Your character cannot remember the circumstances leading to their death.</li>
+                                    <li>You cannot go to the location of your death for ten minutes.</li>
+                                    <li>Does not apply if you are revived by a medic.</li>
+                                    <li>First responders are allowed to return to their death location if called by dispatch.</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div><input type="button" value="I Agree" /> to follow all of the posted rules and to always listen to admin's decisions.</div>
+                    </div>                
+                </div>
+                <div class="tab2"> <!-- Characters -->
+                    <div style='width: 95%; text-align: center; margin: 0 auto; padding: 2px;margin-top: 5px;'>
+                        <div style='float: left; width: 25%; text-align: left; padding-top: 55px;'>
+                            <a id='characterSlot0' style='width: 150px; background-color: gray; margin-bottom: 10px; padding: 10px;'>OPEN SLOT</a><br /><br /><br />
+                            <a id='characterSlot1' style='width: 150px; background-color: gray; margin-bottom: 10px; padding: 10px;'>OPEN SLOT</a><br /><br /><br />
+                            <a id='characterSlot2' style='width: 150px; background-color: gray; margin-bottom: 10px; padding: 10px;'>OPEN SLOT</a><br /><br /><br />
+                            <a id='characterSlot3' style='width: 150px; background-color: gray; margin-bottom: 10px; padding: 10px;'>OPEN SLOT</a><br /><br /><br />
+                            <a id='characterSlot4' style='width: 150px; background-color: gray; margin-bottom: 10px; padding: 10px;'>OPEN SLOT</a><br /><br /><br />
+                            <a id='characterSlot5' style='width: 150px; background-color: gray; margin-bottom: 10px; padding: 10px;'>OPEN SLOT</a><br /><br /><br />
+                            <a id='characterSlot6' style='width: 150px; background-color: gray; margin-bottom: 10px; padding: 10px;'>OPEN SLOT</a><br /><br /><br />
+                            <a id='characterSlot7' style='width: 150px; background-color: gray; margin-bottom: 10px; padding: 10px;'>OPEN SLOT</a>
+                        </div>
+                        <div style='float: left; width: 75%; margin-right: 0px; color: #fff;'>
+                            <div id='charedit'>
+                                <div style='text-align: right; float: right; width: 200px; font-size: 0.9em;'>
+                                    Naming Policy: Your name should be as realistic as possible.<input type='button' id='createCharGenerateName' value='Generate Character Name' /><br /><br />
+                                    Your date of birth should be entered in the following format: mm/dd/yyyy</br ><br />
+                                    Warning: Any violation to these rules will result in your character being edited or deleted by an admin.
+                                </div>
+                                
+                                <table width='60%' style='font-size: 0.9em; color: fff; margin-top: 55px;'>
+                                    <tr>
+                                        <td>First Name:</td>
+                                        <td><input type='text' id='createFirstName' maxlength=16 placeholder='First Name...' /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Last Name:</td>
+                                        <td><input type='text' id='createLastName' maxlength=16 placeholder='Last Name...' /></td>				
+                                    </tr>
+                                    <tr>
+                                        <td>Date Of Birth:</td>
+                                        <td><input type='text' id='createDateOfBirth' maxlength=10 placeholder='mm/dd/yyyy' /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gender:</td>
+                                        <td>
+                                            <input type="radio" id="createGender" name="createGender" value="male" checked><label for="male">Male</label> 
+                                            <input type="radio" id="genderFemale" name="createGender" value="female"><label for="female">Female</label>
+                                            <input type="radio" id="genderNonBinary" name="createGender" value="none"><label for="female">Non-Binary</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Skin:</td>
+                                        <td>
+                                            <input type='button' id='createCharSkin' value='Select a Skin' />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>									
+                                            <a id='cancelcreate' class='button button2 buttonred' style='padding: 4px;'>CANCEL</a>
+                                        </td>
+                                        <td>
+                                            <a id='createchar' class='button button2 buttongreen' style='padding: 4px;'>CREATE CHARACTER</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <div id='charselect' style='width: 100%; display: none;'>
+                                <div style='float: left;'>
+                                    <span id='selectedCharName'>NONE SELECTED</span>
+                                </div>
+                                <div style='float: right;'>							
+                                    <div style='text-align: left; padding: 3px;'>
+        
+                                    </div>
+                                    <div style='text-align: left; padding: 3px; max-width: 200px;'>
+                                        <div style='padding: 2px; font-weight: bold; font-size: 1.1em; width: 100%; text-align: center;'>
+                                            Select Spawn Point:
+                                        </div>
+                                        
+                                        <input type='radio' name='spawnGroup' value='0' checked="checked"/> Random Bus/Train Stop<br />
+                                        <input type='radio' name='spawnGroup' value='1'/> Last Location<br />
+                                        <input type='radio' name='spawnGroup' value='2'/> Home<br />
+                                    </div>
+        
+                                    <div style='height: 200px;'></div>
+                                    <input style='background-color: #99ff99; font-weight: bold; width: 250px;' type='button' class='button button3' id='playCharacter' value='Play Character'/><br />
+                                    <input style='background-color: #f00; color: #fff; font-weight: bold; width: 150px; font-size: 0.8em; padding: 5px !important;' type='button' class='button button3' id='requestDelete' value='Request Delete'/>
+                                </div>
+                                
+                                <br /><br /><br />
+                                <div id='charstats' style='width: 100%; text-align: left;'>
+                                    - Currently carrying <span id='scCash' class='biggreen'>$0</span> cash.<br />
+                                    - Saved <span id='scBank' class='biggreen'>$0</span> in the bank.<br />
+                                    - Has <span id='scFines' class='bigred'>$0</span> in state fines.<br />
+                                    - Received <span id='scCitations' class='bigorange'>0</span> citations.<br />
+                                    - Arrested <span id='scArrests' class='bigred'>0</span> times.<br />
+                                    - Been knocked out <span id='scKnockouts' class='bigorange'>0</span> times.<br />
+                                    - Had <span id='scNearDeaths' class='bigred'>0</span> near death experiences.<br />
+                                    - Served <span id='scServedMonths' class='bigred'>0</span> month(s) in jail.<br />
+                                </div>
+                            </div>				
+                        </div>				
+                    </div>
+                </div>
+                <div class="tab3"> <!-- Ganglands -->
+                    
+                </div>
+                <div class="tab4"> <!-- Law Enforcement -->
+                    
+                </div>
+                <div class="tab5"> <!-- Medical Services -->
+                    
+                </div>
+            </div>
         </div>
 
         <!-- Inventory -->

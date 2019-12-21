@@ -17,6 +17,12 @@ $(function() {
                    return;
               }
 
+              // tsk tsk, not allowed to close welcome screen with escape. pick a character.
+              if (core.screen == welcome) {
+                   return;
+              }
+
+              //
               core.screen.close();
               core.sendPost("CloseMenu", null);
          }
@@ -28,7 +34,7 @@ var core = {
      permissions: 0,
      cityAccess: 0,
      characters: null,
-     maxCharacters: 4,
+     maxCharacters: 8,
 
      //
      menu: null,
